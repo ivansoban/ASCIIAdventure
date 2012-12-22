@@ -6,6 +6,9 @@
 #include "item.h"
 #include "enemy.h"
 
+//Compile: c++ test1.cpp tile.cpp world.cpp player.cpp item.cpp person.cpp -o t_world -lncurses -IIncludes/
+//Run:     ./t_world
+
 tile getStartPosition(world & w) {
 
 	for (int i = 0; i < WORLD_MAX; ++i) {
