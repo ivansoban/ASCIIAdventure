@@ -113,51 +113,7 @@ int random(int e) { // 0 to e exclusive
 
 }
 
-int main()
-{	
-
-	/*************************
-	*  world initialization  *
-	*************************/
-
-	int row,col;									  // max x and y variables
-	int cur_row,cur_col; 							  // middle of the screen variables
-	world w("world.w");								  
-	tile start = getStartPosition(w);
-	int xInWorld = start.getX();
-	int yInWorld = start.getY();
-
-	/*************************
-	* ncurses initialization *
-	*************************/
-
-	initscr();
-	curs_set(0);
-	clear();
-	noecho();	
-	cbreak();									
-	getmaxyx(stdscr,row,col);
-	cur_row = row/2;                                  // The row and col coordinates
-	cur_col = col/2;                                  // for the middle of the screen
-
-	keypad(stdscr , TRUE);                            // makes the keys active
-
-	/*************************
-	* world/player printing  *
-	*************************/
-
-	w.addEnemyToTile(20,10);
-
-	printGame(cur_row , cur_col , row , col , xInWorld , yInWorld , w);
-
-	player p("Ivan" , "Wizard");
-
-	mvprintw(cur_row , cur_col , "%s" , "&");     // Print character
-
-
-	refresh();
-
-	/*************************/									
+void mainLoop(int cur_row , int cur_col , int row , int col , int xInWorld , int yInWorld , world w) {
 
 	int ch;
 
