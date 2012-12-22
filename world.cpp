@@ -59,10 +59,10 @@ tile world::getTile(int row , int col) {
 
 }
 
-void world::addEnemyToTile(int row , int col) {
+void world::addEnemyToTile(int row , int col , char c) {
 
 	wholeWorld[row][col].setEnemy(true);
-	wholeWorld[row][col].setVisibleChar('E');
+	wholeWorld[row][col].setVisibleChar(c);
 
 
 }

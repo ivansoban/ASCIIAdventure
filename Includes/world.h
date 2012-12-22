@@ -15,7 +15,7 @@ public:
 	world(std::string);
 	void showWorld();
 	tile getTile(int , int);
-	void addEnemyToTile(int , int);
+	void addEnemyToTile(int , int , char);
 
 };
 

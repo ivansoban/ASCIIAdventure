@@ -215,7 +215,7 @@ int main()
 	* world/player printing  *
 	*************************/
 
-	w.addEnemyToTile(20,10);
+	w.addEnemyToTile(20,10,'E');
 
 	printGame(cur_row , cur_col , row , col , xInWorld , yInWorld , w);
 
