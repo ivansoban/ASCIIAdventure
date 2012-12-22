@@ -86,26 +86,6 @@ void printGame(int cur_row , int cur_col , int row , int col , int xInWorld , in
 		
 	}
 
-// What should I do about this function?!?!
-/*
-void setUpEnemies(int row , int col , world w) {
-
-	for (int i = 0 ; i < row ; i++) {
-
-		for (int j = 0 ; j < col ; j++) {
-
-			tile e = w.getTile(i , j);
-			if (e.getVisibleChar() == 'e') {
-				e.setEnemy(true);
-			}
-
-		}
-
-	}
-
-}
-*/
-
 int random(int e) { // 0 to e exclusive
 
 	srand(time(NULL));
