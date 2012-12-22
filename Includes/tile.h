@@ -12,16 +12,17 @@ class tile {
 	int position_y;
 
 public:
-	bool isWalkable();
+	bool  isWalkable();
 	//
-	bool hasEnemy();
-	void setEnemy(bool);
+	bool  hasEnemy();
+	void  setEnemy(bool);
+	enemy getEnemy();
 	//
-	char getVisibleChar();
-	void setVisibleChar(char);
-	void setRowAndCol(int , int);
-	int  getX();
-	int  getY();
+	char  getVisibleChar();
+	void  setVisibleChar(char);
+	void  setRowAndCol(int , int);
+	int   getX();
+	int   getY();
 
 };
 
