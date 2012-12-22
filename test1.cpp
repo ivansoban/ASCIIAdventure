@@ -30,61 +30,63 @@ tile getStartPosition(world & w) {
 
 void printGame(int cur_row , int cur_col , int row , int col , int xInWorld , int yInWorld , world w) { // set up init screen
 
-		int init_cur_row = cur_row;	                  // middle of screen; 
-		int init_cur_col = cur_col;
+	int init_cur_row = cur_row;	                  // middle of screen; 
+	int init_cur_col = cur_col;
 
-		int _xInWorld = xInWorld;
-		int _yInWorld = yInWorld;
+	int _xInWorld = xInWorld;
+	int _yInWorld = yInWorld;
 
-		while (init_cur_col > 0) {
-			
-			if (yInWorld < 0) break;
-
-			tile c_tile = w.getTile(xInWorld , yInWorld);
-			mvprintw(init_cur_row , init_cur_col , "%c" , c_tile.getVisibleChar());
-			init_cur_col--;
-			yInWorld--;
-
-		}
-
-		while (init_cur_col < col) {
-
-			if (yInWorld >= WORLD_MAX) break;
-
-			tile c_tile = w.getTile(xInWorld , yInWorld);
-			mvprintw(init_cur_row , init_cur_col , "%c" , c_tile.getVisibleChar());
-			init_cur_col++;
-			yInWorld++;
-
-		}
+	while (init_cur_col > 0) {
 		
-		init_cur_row = 0;
+		if (yInWorld < 0) break;
+
+		tile c_tile = w.getTile(xInWorld , yInWorld);
+		mvprintw(init_cur_row , init_cur_col , "%c" , c_tile.getVisibleChar());
+		init_cur_col--;
+		yInWorld--;
+
+	}
+
+	while (init_cur_col < col) {
+
+		if (yInWorld >= WORLD_MAX) break;
+
+		tile c_tile = w.getTile(xInWorld , yInWorld);
+		mvprintw(init_cur_row , init_cur_col , "%c" , c_tile.getVisibleChar());
+		init_cur_col++;
+		yInWorld++;
+
+	}
+	
+	init_cur_row = 0;
+	init_cur_col = 0;
+
+	xInWorld = _xInWorld - (row/2);
+	yInWorld = _yInWorld - (col/2);
+
+	while (xInWorld < WORLD_MAX && init_cur_row < row) {
+
+		while (yInWorld < WORLD_MAX && init_cur_col < col) {
+
+			tile c_tile = w.getTile(xInWorld , yInWorld);
+			
+			if (xInWorld >= 0 && yInWorld >= 0) mvprintw(init_cur_row , init_cur_col , "%c" , c_tile.getVisibleChar());
+
+			yInWorld++;
+			init_cur_col++;
+
+		}
+
+		xInWorld++;
+		init_cur_row++;
+		yInWorld = _yInWorld - (col/2);
 		init_cur_col = 0;
 
-		xInWorld = _xInWorld - (row/2);
-		yInWorld = _yInWorld - (col/2);
-
-		while (xInWorld < WORLD_MAX && init_cur_row < row) {
-
-			while (yInWorld < WORLD_MAX && init_cur_col < col) {
-
-				tile c_tile = w.getTile(xInWorld , yInWorld);
-				
-				if (xInWorld >= 0 && yInWorld >= 0) mvprintw(init_cur_row , init_cur_col , "%c" , c_tile.getVisibleChar());
-
-				yInWorld++;
-				init_cur_col++;
-
-			}
-
-			xInWorld++;
-			init_cur_row++;
-			yInWorld = _yInWorld - (col/2);
-			init_cur_col = 0;
-
-		}
-		
 	}
+		
+}
+
+
 
 int random(int e) { // 0 to e exclusive
 
