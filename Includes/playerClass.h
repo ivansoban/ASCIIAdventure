@@ -1,8 +1,8 @@
 #ifndef PLAYERCLASS_H
 #define PLAYERCLASS_H
 
-#define C_WARRIOR "warrior"
-#define C_MAGE    "mage"
+#define C_WAR "warrior"
+#define C_WIZ "wizard"
 
 #include <string>
 #include "object.h"
