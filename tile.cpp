@@ -18,10 +18,6 @@ void tile::setEnemy(bool b) {
 	this->enemy = b;
 
 }
-
-enemy tile::getEnemy() {
-	return this->enemy;
-}
 //_______
 char tile::getVisibleChar() {
 
