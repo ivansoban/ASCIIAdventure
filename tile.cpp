@@ -13,9 +13,10 @@ bool tile::hasEnemy() {
 
 }
 
-void tile::setEnemy(bool b) { // TODO: change to new .setEnemy(enemy::enemy *)
+void tile::setEnemy(enemy::enemy * e) { // TODO: change to new .setEnemy(enemy::enemy *)
 
-	this->enemy = b;
+	this->cur_enemy = e;
+	this->enemy = true;
 
 }
 //_______

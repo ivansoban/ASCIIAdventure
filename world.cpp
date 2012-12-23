@@ -61,7 +61,9 @@ tile world::getTile(int row , int col) {
 
 void world::addEnemyToTile(int row , int col , char c) {
 
-	wholeWorld[row][col].setEnemy(true);
+	enemy::enemy * e = new enemy(20 , 20 , c);
+
+	wholeWorld[row][col].setEnemy(e); // TODO: change to new .setEnemy(enemy::enemy *)
 	wholeWorld[row][col].setVisibleChar(c);
 
 

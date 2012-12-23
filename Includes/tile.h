@@ -18,7 +18,7 @@ public:
 	bool isWalkable();
 	//
 	bool hasEnemy();
-	void setEnemy(bool);
+	void setEnemy(enemy::enemy *);
 	//
 	char getVisibleChar();
 	void setVisibleChar(char);
