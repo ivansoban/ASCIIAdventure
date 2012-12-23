@@ -57,14 +57,3 @@ void player::printAllItems() {
 	}
 
 }
-
-/***********************
-* Implim for player's  *
-* class class          *
-***********************/
-
-playerClass::playerClass (std::string name) {
-
-	this->className = name;
-
-}

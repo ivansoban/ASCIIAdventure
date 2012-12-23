@@ -29,25 +29,4 @@ public:
 
 };
 
-/**************************
-* Header for player class *
-* class                   *
-**************************/
-
-#endif
-
-#ifndef PLAYERCLASS_H
-#define PLAYERCLASS_H
-
-#include "object.h"
-
-class playerClass: protected object {
-
-	std::string className;
-
-public:
-	playerClass(std::string);
-
-};
-
 #endif
