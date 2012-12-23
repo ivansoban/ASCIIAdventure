@@ -7,7 +7,7 @@
 * class                *
 ***********************/
 
-player::player (std::string pclass , std::string name) : person(20,20) , p_class (pclass) , items () , equipedWeapon ("No Weapon Equiped" , "" , 0) {
+player::player (std::string name , std::string pclass) : person(20,20) , p_class (pclass) , items () , equipedWeapon ("No Weapon Equiped" , "" , 0) {
 
 	this->name = name;
 
