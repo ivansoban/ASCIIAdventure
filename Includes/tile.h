@@ -1,11 +1,14 @@
 #ifndef TILE_H
 #define TILE_H
 
+#include "enemy.h"
+
 class tile {
 
 	bool walkable;
 	//
-	bool enemy;
+	bool           enemy;
+	enemy::enemy * cur_enemy;
 	//
 	char visibleChar;
 	int position_x;
@@ -22,6 +25,8 @@ public:
 	void setRowAndCol(int , int);
 	int  getX();
 	int  getY();
+	//
+	     tile();
 
 };
 

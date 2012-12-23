@@ -13,7 +13,7 @@ bool tile::hasEnemy() {
 
 }
 
-void tile::setEnemy(bool b) {
+void tile::setEnemy(bool b) { // TODO: change to new .setEnemy(enemy::enemy *)
 
 	this->enemy = b;
 
@@ -53,5 +53,9 @@ int tile::getY() {
 
 	return this->position_y;
 
+}
+
+tile::tile() : cur_enemy(NULL) {
+	
 }
 
