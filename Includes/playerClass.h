@@ -4,7 +4,6 @@
 #define C_WARRIOR "warrior"
 #define C_MAGE    "mage"
 
-#include <string>
 #include "object.h"
 
 class playerClass: protected object {

@@ -2,11 +2,11 @@
 
 playerClass::playerClass (std::string name) {
 
-	if (name == "warrior" || name == "mage") {
+	if (strcmp(name , "warrior") || strcmp(name , "mage")) {
 
 		this->className = name;
 
-		if (name == "warrior") {
+		if (strcmp(name , "warrior")) {
 			this->bonusAttack += 10;
 		}
 
