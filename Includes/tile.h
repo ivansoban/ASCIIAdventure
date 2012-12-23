@@ -1,12 +1,11 @@
 #ifndef TILE_H
 #define TILE_H
-#include "enemy.h"
 
 class tile {
 
 	bool walkable;
 	//
-	bool enemy; //This needs to be an enemy object
+	bool enemy;
 	//
 	char visibleChar;
 	int position_x;
@@ -17,7 +16,7 @@ public:
 	//
 	bool  hasEnemy();
 	void  setEnemy(bool);
-	class enemy getEnemy();
+	enemy getEnemy();
 	//
 	char  getVisibleChar();
 	void  setVisibleChar(char);

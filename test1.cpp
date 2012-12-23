@@ -86,18 +86,7 @@ void printGame(int cur_row , int cur_col , int row , int col , int xInWorld , in
 		
 }
 
-bool attackLoop(player p , enemy e) {
 
-
-
-}
-
-void checkEnemyCollisions(tile t , player p) {
-
-	if (t.hasEnemy()) attackLoop(p , t.getEnemy());
-	else return;
-
-}
 
 int random(int e) { // 0 to e exclusive
 
@@ -106,7 +95,7 @@ int random(int e) { // 0 to e exclusive
 
 }
 
-void mainLoop(int cur_row , int cur_col , int row , int col , int xInWorld , int yInWorld , world w , player p) {
+void mainLoop(int cur_row , int cur_col , int row , int col , int xInWorld , int yInWorld , world w) {
 
 	int ch;
 
@@ -118,7 +107,6 @@ void mainLoop(int cur_row , int cur_col , int row , int col , int xInWorld , int
 		if (ch == KEY_LEFT) {
 
 			tile n_tile = w.getTile(xInWorld , yInWorld - 1);
-			checkEnemyCollisions(n_tile , p);
 			if (n_tile.isWalkable()) {
 				clear();
 				printGame(cur_row , cur_col , row , col , xInWorld , yInWorld - 1, w);
@@ -132,7 +120,6 @@ void mainLoop(int cur_row , int cur_col , int row , int col , int xInWorld , int
 		if (ch == KEY_RIGHT) {
 
 			tile n_tile = w.getTile(xInWorld , yInWorld + 1);
-			checkEnemyCollisions(n_tile , p);
 			if (n_tile.isWalkable()) {
 				clear();
 				printGame(cur_row , cur_col , row , col , xInWorld , yInWorld + 1, w);
@@ -146,7 +133,6 @@ void mainLoop(int cur_row , int cur_col , int row , int col , int xInWorld , int
 		if (ch == KEY_UP) {
 
 			tile n_tile = w.getTile(xInWorld - 1 , yInWorld);
-			checkEnemyCollisions(n_tile , p);
 			if (n_tile.isWalkable()) {
 				clear();
 				printGame(cur_row , cur_col , row , col , xInWorld - 1 , yInWorld , w);
@@ -160,7 +146,6 @@ void mainLoop(int cur_row , int cur_col , int row , int col , int xInWorld , int
 		if (ch == KEY_DOWN) {
 
 			tile n_tile = w.getTile(xInWorld + 1, yInWorld);
-			checkEnemyCollisions(n_tile , p);
 			if (n_tile.isWalkable()) {
 				clear();
 				printGame(cur_row , cur_col , row , col , xInWorld + 1 , yInWorld , w);
@@ -224,7 +209,7 @@ int main()
 
 	/*************************/	
 
-	mainLoop(cur_row , cur_col , row , col , xInWorld , yInWorld , w , p);								
+	mainLoop(cur_row , cur_col , row , col , xInWorld , yInWorld , w);								
 
 	endwin();								/* End curses mode		  */
 
